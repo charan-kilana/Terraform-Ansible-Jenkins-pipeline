@@ -250,7 +250,7 @@ Follow these steps to set up dynamic inventory using the AWS EC2 plugin:
 - Add host_key_checking as false
   host_key_checking    =  False
 
-- go to line number 330 and enable plugins **enable_plugins = aws_ec2.yml**.  
+- go to line number 330 and enable plugins **enable_plugins = aws_ec2**.  
   Our slave server info will be present in the aws_ec2.yaml
   
 <p align="center">
@@ -287,9 +287,18 @@ filters:
   ![march key](docs/assets/add_key.png)
 
 ---
+
 ### Step 8: Add a stage in pipeline
 
-
+```bash
+stage("AnsiblePipeline")
+{
+steps
+    {
+        sh 'ansible-playbook -i /opt/ansible/inventory/aws_ec2.yml /var/lib/jenkins/workspace/My_Deployment-1/ansible/deployment.yml'
+    }
+}
+```
 
 ---
 
@@ -303,11 +312,21 @@ filters:
 #### 📸 Screenshot:
 ![Key Name Change](docs/assets/deployment_key_change.png)
 
+---
 
 
+### Step 9: Build the pipeline
+
+#### 📸 Screenshot:
+![Final_Pipeline](docs/assets/final_playbook.png)
 
 
+### Hurray We deployed the application
 
+Take one Ipv of two server and paste in browser and access the applciaion.
+
+#### 📸 Screenshot:
+![Hurray](docs/assets/hurray.png)
 
 
 
