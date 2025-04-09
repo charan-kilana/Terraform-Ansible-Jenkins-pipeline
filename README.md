@@ -110,7 +110,37 @@ sudo amazon-linux-extras install ansible2 -y
 
 ## Step-5: Write pipeline code
 ```bash
- 
+pipeline {
+    agent any
+    stages {
+        stage('Code') 
+        {
+            steps 
+            {
+                git branch: 'main', url: 'https://github.com/charan-kilana/Terraform-Ansible-Jenkins-pipeline.git'
+            }
+        }
+        
+        stage('Init')
+        {
+            steps
+            {
+                sh 'terraform init'
+            }
+        }
+        stage('Plan')
+        {
+            steps{
+                sh "terraform plan"
+            }
+        }
+        stage('Apply'){
+            steps{
+                sh "terraform apply --auto-approve"
+            }
+        }
+    }
+}
 ```
 
 #Before Builiding code you gotta change few things in your terraform files
