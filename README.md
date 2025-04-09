@@ -204,8 +204,55 @@ script
 ![S3 backend_permission](docs/assets/yes_tf_s3.png)
 
 ![S3 Bucket](docs/assets/s3_bucket.png)
+
 ---
 
+
+### 🧰 Step 7: Ansible Without Traditional Master-Slave Setup
+
+Typically, before running an Ansible playbook, we:
+- Set up a **master-slave architecture**
+- Configure the **static inventory file** with IP addresses
+- Handle **user creation**, **password authentication**, and **SSH key setup**
+
+> ❗ But in this project, we’re **not following** the traditional Ansible master-slave setup.
+
+---
+
+### 🛠️ Requirement for Dynamic Inventory: Install `boto3`
+
+If you're planning to use **Ansible dynamic inventory with AWS EC2**, you must install the **`boto3`** Python module on your Jenkins server (or wherever Ansible is run).
+
+`boto3` is the **AWS SDK for Python** and is required by Ansible to fetch EC2 instance data dynamically.
+
+#### 📦 Install `boto3` using pip:
+
+```bash
+sudo pip install boto3
+```
+
+### ⚙️ Configure Ansible for Dynamic Inventory with AWS EC2
+
+Follow these steps to set up dynamic inventory using the AWS EC2 plugin:
+
+#### 🔧 Step-by-Step:
+
+1. **Go to the default Ansible config directory:**
+   
+- Go to default path **cd /etc/ansible/**
+- Open ansible.cfg
+- Define dynamic inventory
+  inventory    =  /opt/ansible/inventory/aws_ec2.yml
+- Add host_key_checking as false
+  host_key_checking    =  False
+
+- go to line number 330 and enable plugins **enable_plugins = aws_ec2.yml**.  
+  Our slave server info will be present in the aws_ec2.yaml
+  
+<p align="center">
+  <img src="docs/assets/ansible_inv.png" width="45%"/>
+  <img src="docs/assets/ansible_inv_2.png" width="45%"/>
+</p>
 
 
 
