@@ -336,4 +336,10 @@ Your static website has been successfully deployed!
 > ✅ You should see your deployed site running live on the EC2 instance!
   
 
+### (Optional)
+### Slack Integration for pipeline status
+- Slack Integration is pretty straight forward and easy.
+- You can add the below screen shot at end of the pipleine.
 
+ #### 📸 Screenshot:
+![Slack_Integration](docs/assets/slack_integ.png)
