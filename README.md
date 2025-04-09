@@ -57,7 +57,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 /usr/local/bin/aws --version
-```bash
+```
 
 ---
 
@@ -95,7 +95,7 @@ Use the following commands to install Terraform on an Amazon Linux-based instanc
 ```bash
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
 sudo yum -y install terraform
-```bash
+```
 
 ---
 
@@ -106,7 +106,7 @@ Install Ansible on your Amazon Linux-based EC2 instance using the following comm
 ```bash
 sudo yum install python-pip -y
 sudo amazon-linux-extras install ansible2 -y
-```bash
+```
 
 ## Step-5: Write pipeline code
 ```bash
