@@ -288,13 +288,15 @@ filters:
 
 ---
 
-### Step 8: Add a stage in pipeline
+---
+
+### 🧰 Step 8: Add Ansible Stage in Jenkins Pipeline
+
+To run the Ansible playbook as part of your Jenkins pipeline, add the following stage to your `Jenkinsfile`:
 
 ```bash
-stage("AnsiblePipeline")
-{
-steps
-    {
+stage("AnsiblePipeline") {
+    steps {
         sh 'ansible-playbook -i /opt/ansible/inventory/aws_ec2.yml /var/lib/jenkins/workspace/My_Deployment-1/ansible/deployment.yml'
     }
 }
@@ -315,21 +317,23 @@ steps
 ---
 
 
-### Step 9: Build the pipeline
+### 🧰 Step 9: Build the Pipeline
 
-#### 📸 Screenshot:
-![Final_Pipeline](docs/assets/final_playbook.png)
+Once all configurations are in place (Terraform, Ansible, backend, inventory, etc.), you can now trigger the pipeline from Jenkins.
 
 
-### Hurray We deployed the application
+---
 
-Take one Ipv of two server and paste in browser and access the applciaion.
+### 🎉 Hurray! Application Deployed Successfully
+
+Your static website has been successfully deployed!
+
+👉 Take the **public IP** of either of the EC2 instances (created by Terraform), paste it in your browser, and access the application.
 
 #### 📸 Screenshot:
 ![Hurray](docs/assets/hurray.png)
 
-
-
+> ✅ You should see your deployed site running live on the EC2 instance!
   
 
 
