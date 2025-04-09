@@ -167,7 +167,6 @@ key = "prod/terraform.tfstate"
 
 ---
 
----
 
 ### 🧰 Step 5: Configure S3 Backend for Storing State Files
 
@@ -182,10 +181,27 @@ key = "prod/terraform.tfstate"
 }
 }
 ```
-  
 
+---
 
+### 🧰 Step 6: Automate `terraform init` Confirmation for S3 Backend
 
+When you configure the S3 backend in Terraform, running `terraform init` will prompt:
+
+> `Do you want to migrate your state from local to remote (yes/no)?`
+
+To automate this step in a pipeline (or shell script), you can echo `yes` into the command:
+
+```bash
+script
+    {
+    sh 'echo -e "yes\n" | terraform init'
+    }
+```
+
+![S3 backend_permission](docs/assets/yes_tf_s3.png)
+
+---
 
 
 
