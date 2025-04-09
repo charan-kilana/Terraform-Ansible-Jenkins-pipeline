@@ -254,5 +254,34 @@ Follow these steps to set up dynamic inventory using the AWS EC2 plugin:
   <img src="docs/assets/ansible_inv_2.png" width="45%"/>
 </p>
 
+2. Plugin Creation **/opt/ansible/inventory/aws_ec2.yml**
+
+- Go to **cd /opt/**
+- Create a folder ansible
+  mkdir ansible
+- Create a folder in ansible named inventory
+  cd ansible
+  mkdir inventory
+- Write a plugin in aws_ec2.yml
+  
+  ```bash
+  ---
+plugin: aws_ec2
+regions:
+  - us-east-1
+filters:
+  tag:aws:autoscaling:groupName: web-server-asg        # Filtering slaves using tags
+```
+
+
+
+
+
+
+
+
+
+
+  
 
 
