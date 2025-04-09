@@ -203,6 +203,7 @@ script
 
 ![S3 backend_permission](docs/assets/yes_tf_s3.png)
 
+![S3 Bucket](docs/assets/s3_bucket.png)
 ---
 
 
