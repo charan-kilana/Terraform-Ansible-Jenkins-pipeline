@@ -334,7 +334,9 @@ Your static website has been successfully deployed!
 ![Hurray](docs/assets/hurray.png)
 
 > ✅ You should see your deployed site running live on the EC2 instance!
+
   
+---
 
 ### (Optional)
 ### Slack Integration for pipeline status
