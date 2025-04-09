@@ -264,15 +264,15 @@ Follow these steps to set up dynamic inventory using the AWS EC2 plugin:
   mkdir inventory
 - Write a plugin in aws_ec2.yml
   
-  ```bash
-  ---
+```bash
+---
 plugin: aws_ec2
 regions:
   - us-east-1
 filters:
   tag:aws:autoscaling:groupName: web-server-asg        # Filtering slaves using tags
 ```
-
+![aws_ec2_plugin](docs/assets/aws_plugin.png)
 
 
 
