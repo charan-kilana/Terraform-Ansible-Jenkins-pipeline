@@ -14,6 +14,11 @@ This project demonstrates a complete CI/CD workflow to deploy a **static website
 - **Splunk**: Collects and monitors Jenkins logs.
 
 ---
+## 📸 Architecture Diagram
+
+![Architecture Diagram](docs/assets/arch.png)
+
+---
 
 ## 📂 Project Structure
 
