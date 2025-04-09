@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "one" {
-  bucket = "charan.unique.bucket.main"
+  bucket = "charan.terraform.bucket.main"
 }
 
 resource "aws_s3_bucket_ownership_controls" "two" {
@@ -20,12 +20,5 @@ resource "aws_s3_bucket_versioning" "three" {
 bucket = aws_s3_bucket.one.id
 versioning_configuration {
 status = "Enabled"
-}
-}
-terraform {
-backend "s3" {
-region = "us-east-1"
-bucket = "charan.unique.bucket.main"
-key = "prod/terraform.tfstate"
 }
 }
