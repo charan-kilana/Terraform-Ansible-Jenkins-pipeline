@@ -143,10 +143,12 @@ pipeline {
 }
 ```
 
+#### 📸 Screenshot:
 ![S3 backend_permission](docs/assets/pipeline_status.png)
 
 #Before Builiding code you gotta change few things in your terraform files
 
+#### 📸 Screenshot:
 - Go to s3.tf and give a unique bukcet name.
   ![S3 changes](docs/assets/s3_change.png)
   
@@ -201,8 +203,10 @@ script
     }
 ```
 
+#### 📸 Screenshot:
 ![S3 backend_permission](docs/assets/yes_tf_s3.png)
 
+#### 📸 Screenshot:
 ![S3 Bucket](docs/assets/s3_bucket.png)
 
 ---
@@ -272,12 +276,32 @@ regions:
 filters:
   tag:aws:autoscaling:groupName: web-server-asg        # Filtering slaves using tags
 ```
+
+#### 📸 Screenshot:
 ![aws_ec2_plugin](docs/assets/aws_plugin.png)
 
 - Go to cd /etc/ansible/ and copy the key-pair in that path.
   vim  **march.pem** and add the .pem file
+
+  #### 📸 Screenshot:
   ![march key](docs/assets/add_key.png)
+
 ---
+### Step 8: Add a stage in pipeline
+
+
+
+---
+
+> 📝 **Note:**  
+> Before building the pipeline, make sure to update a few values in the **`ansible/deployment.yaml`** file.
+
+### 🔑 Update the Key Name
+
+- Change the key name under the SSH connection section to match the key pair you're using for the EC2 instance.
+
+#### 📸 Screenshot:
+![Key Name Change](docs/assets/deployment_key_change.png)
 
 
 
