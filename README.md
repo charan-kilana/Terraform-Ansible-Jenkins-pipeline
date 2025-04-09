@@ -143,6 +143,8 @@ pipeline {
 }
 ```
 
+![S3 backend_permission](docs/assets/pipeline_status.png)
+
 #Before Builiding code you gotta change few things in your terraform files
 
 - Go to s3.tf and give a unique bukcet name.
