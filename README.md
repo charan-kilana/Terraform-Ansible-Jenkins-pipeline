@@ -115,9 +115,16 @@ sudo amazon-linux-extras install ansible2 -y
 
 #Before Builiding code you gotta change few things in your terraform files
 
-- Go to s3.tf and give a unique bukcet name
+- Go to s3.tf and give a unique bukcet name.
+  ![S3 changes](docs/assets/s3_change.png)
 
+- Go to main.tf and change image_id, key_name, subnets and availability_zones.
+  <p align="center">
+  <img src="docs/assets/main_1.png" width="45%"/>
+  <img src="docs/assets/main_2.png" width="45%"/>
+</p>
 
+  
 
 
 
