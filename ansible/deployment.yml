@@ -26,7 +26,7 @@
 
     - name: get the source code from github
       git:
-        repo: "https://github.com/devops0014/staticsite-docker.git"
+        repo: "https://github.com/charan-kilana/staticsite-docker-Forked-Repo.git"
         dest: /var/www/
         update: yes
         version: master
