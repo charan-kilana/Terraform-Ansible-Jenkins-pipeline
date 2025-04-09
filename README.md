@@ -117,6 +117,17 @@ sudo amazon-linux-extras install ansible2 -y
 
 - Go to s3.tf and give a unique bukcet name.
   ![S3 changes](docs/assets/s3_change.png)
+  
+-For the first build remove the backend code
+```bash
+terraform {
+backend "s3" {
+region = "us-east-1"
+bucket = "charan.devops.project.bucket"
+key = "prod/terraform.tfstate"
+}
+}
+```
 
 - Go to main.tf and change image_id, key_name, subnets and availability_zones.
   <p align="center">
@@ -124,6 +135,23 @@ sudo amazon-linux-extras install ansible2 -y
   <img src="docs/assets/main_2.png" width="45%"/>
 </p>
 
+---
+
+---
+
+### 🧰 Step 5: Configure S3 Backend for Storing State Files
+
+Once your pipeline is successful and the S3 bucket is created, you can configure Terraform to use **remote state storage** in an S3 bucket by adding the following to `s3.tf`:
+
+```bash
+terraform {
+backend "s3" {
+region = "us-east-1"
+bucket = "charan.devops.project.bucket"
+key = "prod/terraform.tfstate"
+}
+}
+```
   
 
 
